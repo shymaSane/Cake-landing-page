@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+
+:root {
+    --smokyBlack: rgb(19, 3, 3);
+    --brown: rgb(45, 8, 10);
+    --dykeBrown: rgb(96, 57, 48);
+    --tuscanRed: rgb(119, 84, 62);
+    --apricot: rgb(255, 205, 188);
+    --silver: rgb(196, 190, 192);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--smokyBlack);
+    background:  linear-gradient(rgba(255, 205, 188, .4), rgba(255, 205, 188, .1)), url(../img/background-pine-texture-82256.jpg) center/cover fixed repeat;
+}
+
+
+
+.header { 
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(19, 3, 3, 0.4), rgba(19, 3, 3, 0.4)),url(../img/bake-baked-bakery-1028714.jpg) center/cover fixed no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--apricot);
+}
+
+/*banner*/
+.banner {
+    flex: 1 0 100%; /*to take the whole spcae in the middel*/
+    text-align: center;
+}
+
+.banner-title {
+    font-family: 'Courgette';
+    font-weight: 150;
+    letter-spacing: 2px;
+    font-size: 128px;
+    opacity: 0.9;
+    
+}
+
+.banner-icon {
+    margin: 0px 25px;
+    text-decoration: none;
+    color: var(--apricot);
+    opacity: 0.9;
+    
+}
+
+.fa-fw {
+    border: 1px solid  rgba(255, 205, 188, 0.9);
+    border-radius: 50%;
+    padding: 7px 2px;
+}
+
+
+.fa-fw:hover {
+    color: var(--smokyBlack);
+    background: rgba(255, 205, 188, 0.9);
+    transform: scale(1.2)
+}
+
+/*End Banner*/
+
+/*nav button*/
+.nav-button {
+    z-index: 1;
+    text-decoration: none;
+    color: var(--apricot); 
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    animation: nav-button 1s linear infinite;
+}
+
+@keyframes nav-button {
+    from{transform:scale(1);}
+    to{transform: scale(1.3);}
+}
+/*End nav-button*/
+
+/*side bar list*/
+.side-bar {
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(119, 84, 62, 0.7); */
+    background-color: rgba(19, 3, 3, .8);
+    text-align: center;
+    transition: all .5s linear;
+    z-index: 2;
+}
+
+.logo-img {
+    width: 90px;
+    height: 90px;
+}
+
+.logo {
+    padding: 20px;
+    border-bottom: 1px dashed rgba(19, 3, 3, 0.3)
+}
+
+.side-bar-component{
+    list-style-type: none;  
+}
+
+.component {
+    font-size: 24px;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    color: var(--apricot);
+    letter-spacing: 2px;
+    font-family: 'Courgette';
+    
+    
+}
+
+.component:hover {
+    background: rgba(19, 3, 3, 0.9); 
+    transition: all 1s linear;
+    color: var(--apricot)
+}
+
+.show-side-bar{
+    width: 160px;
+}
+
+/*End side bar list*/
+
+/* about */
+
+.about{
+    /* we should use min height rather than just height to prevent verlapping
+    when shrink the browser */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(255, 205, 188, .4), rgba(255, 205, 188, .1)), url(../img/background-pine-texture-82256.jpg) center/cover fixed repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+.our-story, .our-story1{
+    flex: 0 0 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 60px;
+}
+
+.story-img, .story-img1 {
+    flex: 0 0 50%;
+    max-width: 350px;
+    max-height: 50vh;
+    border: 1px dashed var(--brown);
+    border-radius: 5%;
+}
+
+.story-img1{
+    order: 1;
+}
+
+.about-article, .about-article1 {
+    flex: 0 0 50%;
+    text-align: justify;
+    align-self: center;
+    padding-left: 60px;
+}
+
+.about-article1 {
+    padding-left: 0px;
+    padding-right: 60px;
+}
+
+
+.about-title, .about-title1 {
+    font-family: 'Courgette';
+    font-size: 32px; 
+}
+
+.about-paragraph, .about-paragraph1 {
+    padding-top: 20px;
+    letter-spacing: 1px;
+    font-weight: 550;
+    text-align: justify;
+    color: rgba(119, 84, 62, 0.9)
+}
+
+/*this is for to make border shorter than its parent element*/
+.about-title:after {
+    content: ""; /*This is necessary for the pseudo element to work. */
+    display: block; /*This will put the pseudo element on its own line. */
+    width: 40%;
+    padding-bottom: 20px;
+    border-bottom: 3px dashed var(--brown)
+}
+/*end of making the border shorter*/
+
+span {
+    color: var(--tuscanRed)
+}
+
+/* end about */
+
+/* free cake */
+
+.freeCake {
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 170px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(19, 3, 3, 0.4), rgba(19, 3, 3, 0.4)),url(../img/bake-baked-bakery-1028714.jpg) center/cover fixed no-repeat;
+    color: var(--apricot);
+}
+
+.cards {
+    flex: 0 0 30%;
+    /* border: 1px dashed var(--apricot); */
+    box-shadow: 5px 5px 20px var(--tuscanRed);
+    border: 1px dashed var(--apricot);
+    border-radius: 2px;
+    margin: 15px;
+    max-width: 300px;
+    background: rgba(19, 3, 3, .7)
+}
+
+.cards:hover {
+    transform: scale(1.05)
+}
+
+.cards-img{
+    height: 30vh;
+    width: 100%;
+}
+
+.cards-description{
+    text-align: justify;
+    padding: 20px 20px;
+    font-size: 14px;
+    
+}
+
+.discount {
+    text-align: center;
+    padding: 40px 20px 0 20px;
+    font-family: 'Courgette';
+}
+/* end free cake */
+
+/* work */
+/* .background-work {
+    min-height: 100vh;
+    background:  linear-gradient(rgba(255, 205, 188, .4), rgba(255, 205, 188, .1)), url(../img/background-pine-texture-82256.jpg) center/cover fixed repeat;
+    z-index: -1;
+} */
+.work_title{
+    font-family: 'Courgette';
+    font-size: 46px; 
+    margin: 50px 170px;
+}
+
+.work_title:after {
+    content: ""; /*This is necessary for the pseudo element to work. */
+    display: block; /*This will put the pseudo element on its own line. */
+    width: 30%;
+    padding-bottom: 20px;
+    border-bottom: 3px dashed var(--brown)
+}
+
+.work {
+    min-height: 100vh;
+    max-width: 100%;
+    display: grid;
+    grid-gap: 5px;
+    margin: 20px 170px;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* if we did aut-fill on rows it wont work when responsive */
+    grid-auto-rows: 200px 200px;
+    grid-auto-flow: dense
+}
+
+.gallery {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px dashed var(--smokyBlack);
+    border-radius: 5px;
+} 
+
+
+.gallery:hover{
+    cursor: zoom-in;
+    opacity: .7;
+    transform: scale(1.02)
+}
+.one{
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.five {
+    grid-area: span 2;
+}
+
+.eight {
+    grid-area: span 2;
+}
+
+/* modal */
+.modal{
+    display: none;
+    position: fixed;
+    z-index:1;
+    padding: 100px; /*to give space above the photo for the close sign*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow:auto; /*allow scrolling if needed*/
+    background-color: rgba(0,0,0,0.9); /*black with opacity*/
+
+}
+
+.modal-content{
+    display: block;
+    width: 70%;
+    height: 70vh;
+    border: 2px solid var(--apricot);
+    border-radius: 5px;
+    margin: auto; /*to not have space from left and right*/
+}
+
+/* adding animation */
+.modal-content{
+    animation: zoom 2s;
+}
+@keyframes zoom {
+    from{transform: scale(0)}
+    to{transform: scale(1)}
+}
+
+.close{
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 42px;
+    color: var(--apricot);
+}
+
+.close:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+#caption {
+    font-family: "Courgette";
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 36px;
+    color: var(--apricot)
+}
+
+.slide {
+    position: absolute;
+    font-size: 70px;
+    right: 30vh;
+    top: 50vh;
+    color: var(--apricot);
+}
+
+.slide:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+/* end of modal */
+
+
+/* end work */
+
+/* contact us */
+.contact{
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+    background: rgba(119, 84, 62, 0.6);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.our_site_map{
+    grid-column-end: span 2;
+    
+}
+.contact-map {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 170px;
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.address_icon {
+   font-size: 36px;
+   color: var(--apricot);
+   opacity: .9;
+}
+
+.address_title{
+    color: var(--apricot);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: 'Trebuchet MS';
+}
+
+.adress_info{
+    padding: 2px;
+    font-family: 'Trebuchet MS';
+    font-size: 18px;
+    color: var(--smokyBlack);
+    opacity: .8
+}
+/* End of contact us */
+
+/*Responsive*/
+@media screen and (max-width:992px) {
+    .banner-title {
+        font-size: 36px;
+    }
+    .banner-icon {
+        margin: 2px 2px;
+    }
+    .fa-fw{
+        font-size: 32px !important;
+        padding: 2px;
+    }
+
+    .show-side-bar{
+        width: 100vw;
+        background-color: rgb(19, 3, 3);
+        color: var(--apricot);
+    }
+    .component:hover {
+        background: rgba(255, 205, 188, 0.7)
+    }
+
+    .about{
+        padding: 0 10px;
+    }
+    .our-story, .our-story1 {
+        flex: 0 0 100%;
+    }
+
+    .about-article, .about-article1 {
+        flex: 0 0 100%;
+        text-align: center;
+        padding: 10px;
+        align-self: flex-start;
+    }
+
+    .story-img, .story-img1{
+        max-width: 300px;
+        flex: 0 0 100%;
+        margin: 10px;
+    }
+
+    .story-img1{
+        order: 0;
+    }
+
+    .about-title:after{
+        margin: 0 auto;
+    }
+    /* cards */
+    .freeCake {
+        padding: 10px;
+    }
+    .cards {
+        flex: 0 0 100%;
+        box-shadow: 2px 2px 5px var(--apricot);
+    }
+    /* end cards */
+    /* work */
+    .work {
+        margin: 5px;
+    }
+    /* .gallery {
+        width: 100%;
+        height: auto;
+        display: block;
+    } */
+
+    .one, .five, .eight{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .work_title{
+        font-family: 'Courgette';
+        font-size: 32px; 
+        margin: 30px 5px;
+    }
+
+    .contact{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: 1fr 1fr;
+    }
+
+    .contact-map {
+        padding: 120px 10px 0px 10px;
+    }
+
+    .contact_info{
+        text-align:center
+    }
+}
+
+
